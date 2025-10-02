@@ -18,8 +18,9 @@ int main() {
 		std::string userChoise;
 
 		std::cout << "1.Add a Task\n"; 
-		std::cout << " 2.Show The Tasks\n"; 
-		std::cout << "  *Choose an action : ";
+		std::cout << " 2.Remove a Task\n"; 
+		std::cout << "  3.Show The Tasks\n"; 
+		std::cout << "   *Choose an action : ";
 		std::cin >> userChoise;
 
 		if (userChoise == "1") {
@@ -35,6 +36,15 @@ int main() {
 		}
 
 		if(userChoise == "2"){
+			std::cout << "Which Task's Number Do You Wish to Remove? : ";
+
+			int i;
+			std::cin >>i;
+			tasks.erase(tasks.begin()+(i-1));
+
+		}
+
+		if(userChoise == "3"){
 			int i;
 			for(i = 0; i < tasks.size(); i++){
 				std::cout << tasks[i].date_ << tasks[i].taskName_ << "\n";
