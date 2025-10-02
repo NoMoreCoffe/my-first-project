@@ -3,9 +3,9 @@
 #include <vector>
 class MyTask {
 public:
-	std::string date_{};
-	std::string taskName_{};
-	class MyTask() {};
+	std::string date_="Date";
+	std::string taskName_="Name";
+	MyTask(){};		
 
 
 };
@@ -17,7 +17,9 @@ int main() {
 	while (true) {
 		std::string userChoise;
 
-		std::cout << "1.Add a Task\n Choose an action : ";
+		std::cout << "1.Add a Task\n"; 
+		std::cout << " 2.Show The Tasks\n"; 
+		std::cout << "  *Choose an action : ";
 		std::cin >> userChoise;
 
 		if (userChoise == "1") {
@@ -30,6 +32,13 @@ int main() {
 			std::cout << std::endl;
 
 			tasks.push_back(newTask);
+		}
+
+		if(userChoise == "2"){
+			int i;
+			for(i = 0; i < tasks.size(); i++){
+				std::cout << tasks[i].date_ << tasks[i].taskName_ << "\n";
+			}
 		}
 	}
 
